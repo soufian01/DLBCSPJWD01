@@ -1,0 +1,260 @@
+/* Generali */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #cce7d0;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+form button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+form button:hover {
+    background-color: #45a049;
+    transform: scale(1.02);
+}
+
+form a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+/* Tab Buttons */
+.tab-button {
+    padding: 12px 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+    transform: scale(1.02);
+}
+
+.tab-button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Tab Content */
+.tab-content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Pulsanti Query */
+.query-button {
+    padding: 12px 24px;
+    margin: 10px 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px #388E3C;
+    transition: all 0.3s ease;
+}
+
+.query-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px #2E7D32;
+    transform: translateY(-2px);
+}
+
+.query-button:active {
+    background-color: #388E3C;
+    box-shadow: 0 2px #1B5E20;
+    transform: translateY(2px);
+}
+
+.query-button i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Variante per i pulsanti di reset o azione */
+.query-button.secondary {
+    background-color: #f44336;
+    box-shadow: 0 4px #d32f2f;
+}
+
+.query-button.secondary:hover {
+    background-color: #e53935;
+    box-shadow: 0 6px #c62828;
+}
+
+/* Responsività */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .tab-button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    form input, form button {
+        font-size: 0.9rem;
+    }
+
+    .tab-button {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}

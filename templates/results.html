@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<table border="1" id="sortable-table">
+    <thead>
+        <tr>
+            {% for column in data[0].keys() %}
+            <th onclick="sortTable({{ loop.index0 }})" data-column="{{ loop.index0 }}">
+                {{ column }} ▲▼
+            </th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            {% for item in row.values() %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+
+<script>
+    function sortTable(columnIndex) {
+        let table = document.getElementById("sortable-table");
+        let tbody = table.getElementsByTagName("tbody")[0];
+        let rows = Array.from(tbody.getElementsByTagName("tr"));
+
+        let ascending = table.getAttribute("data-sort-order") === "asc";
+        table.setAttribute("data-sort-order", ascending ? "desc" : "asc");
+
+        rows.sort((rowA, rowB) => {
+            let cellA = rowA.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
+            let cellB = rowB.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
+
+            if (!isNaN(cellA) && !isNaN(cellB)) { // if numbers, then sort them considering that
+                return ascending ? cellA - cellB : cellB - cellA;
+            }
+
+            return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+        });
+
+        tbody.innerHTML = ""; // empty the table and then appena the new sorted rows again
+        rows.forEach(row => tbody.appendChild(row));
+    }
+</script>
+
+{% endblock %}

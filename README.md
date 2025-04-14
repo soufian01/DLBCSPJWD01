@@ -1,5 +1,5 @@
-Installation Instructions
-Prerequisites
+**Installation Instructions
+**Prerequisites
 Before you begin, ensure you have the following tools installed:
 Python 3.x (recommended: Python 3.8 or higher)
 Download it from python.org and verify with:  

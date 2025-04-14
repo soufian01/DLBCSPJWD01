@@ -51,7 +51,7 @@ def load_user(user_id):
         cursor.execute('SELECT * FROM Users WHERE id = ?', (user_id,))
         user = cursor.fetchone()
         if user:
-            print(f"User found with ID: {user[0]}")  # Aggiungi log per il debug
+            print(f"User found with ID: {user[0]}")
             return User(user[0], user[1], user[2], user[4], user[5])
         else:
             print("User not found.")
